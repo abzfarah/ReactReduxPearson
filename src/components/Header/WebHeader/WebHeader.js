@@ -8,12 +8,13 @@ import cxN from 'classnames';
 
 const cx = styles::classNames;
 
+
 class WebHeader extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
     menuItems: PropTypes.array,
-    theme: PropTypes.oneOf(['light', 'dark']),
+    theme: PropTypes.oneOf(['light', 'gray', 'dark']),
     featuredEnable: PropTypes.bool,
     featuredLink: PropTypes.string,
     featuredText: PropTypes.string,
@@ -132,13 +133,13 @@ class WebHeader extends Component {
       primaryButtonLink,
       this.closeDropdownOnButtonClick(primaryButtonOnClick),
       primaryButtonText,
-      'btn btn-success btn-sm'
+      cx('btn', 'btn-success', 'btn-sm')
     );
     const secondaryButton = this.renderButton(
       secondaryButtonLink,
       this.closeDropdownOnButtonClick(secondaryButtonOnClick),
       secondaryButtonText,
-      'btn btn-transparent btn-sm'
+      cx('btn', 'btn-transparent', 'btn-sm')
     );
     const renderedMenuItems = menuItems.map(item =>
       <Item
@@ -179,11 +180,7 @@ class WebHeader extends Component {
               <ul className={cx('navigation')}>{!!children ? children : renderedMenuItems}</ul>
             </nav>
             <div
-              className={cxN(cx('buttons-group', {
-                'is-dropdown-open': navbarDropdownIsOpen
-              }), {
-                'theme-dark': theme === 'dark'
-              })}
+              className={cx('buttons-group')}
             >
               {secondaryButtonEnable ? secondaryButton : null}
               {primaryButtonEnable ? primaryButton : null}

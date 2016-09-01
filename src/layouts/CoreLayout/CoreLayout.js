@@ -4,7 +4,7 @@ import classes from './CoreLayout.scss'
 import  '../../styles/index.styl'
 
 export const CoreLayout = ({ children }) => (
-  <div id="header">
+  <div >
     <Header />
 
       {children}

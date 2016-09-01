@@ -33,16 +33,7 @@ const Head = ({
       <a href="/" rel="home" className={cx('logo')} onClick={closeHeaderDropdown}>
         <span>Auth0</span>
       </a>
-      {featured
-        ?
-        <a
-          href={featuredLink}
-          className={cx('hiring', 'animated', 'bounce')}
-          onClick={closeHeaderDropdown}
-          rel="external"
-        >{featuredText}</a>
-        : null
-      }
+
     </h1>
   </div>;
 
