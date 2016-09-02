@@ -6,6 +6,9 @@ import styles from './WebHeader.styl';
 import classNames from 'classnames/bind';
 import cxN from 'classnames';
 
+
+import Button from '../Button'
+
 const cx = styles::classNames;
 
 class WebHeader extends Component {
@@ -170,6 +173,8 @@ class WebHeader extends Component {
               theme={theme}
               closeHeaderDropdown={this.closeDropdownOnButtonClick()}
             />
+
+
             <nav
               className={cx('collapse', {
                 'is-dropdown-open': navbarDropdownIsOpen
@@ -178,6 +183,9 @@ class WebHeader extends Component {
             >
               <ul className={cx('navigation')}>{!!children ? children : renderedMenuItems}</ul>
             </nav>
+
+
+
             <div
               className={cxN(cx('buttons-group', {
                 'is-dropdown-open': navbarDropdownIsOpen
@@ -188,6 +196,11 @@ class WebHeader extends Component {
               {secondaryButtonEnable ? secondaryButton : null}
               {primaryButtonEnable ? primaryButton : null}
             </div>
+
+            <Button  size="sm" className='button button-success' >Suck me</Button>
+
+
+
           </div>
         </div>
       </header>
