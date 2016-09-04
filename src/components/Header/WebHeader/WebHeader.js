@@ -7,8 +7,6 @@ import classNames from 'classnames/bind';
 import cxN from 'classnames';
 
 
-import Button from '../Button'
-
 const cx = styles::classNames;
 
 class WebHeader extends Component {
@@ -197,7 +195,7 @@ class WebHeader extends Component {
               {primaryButtonEnable ? primaryButton : null}
             </div>
 
-            <Button  size="sm" className='button button-success' >Suck me</Button>
+            
 
 
 

@@ -132,7 +132,22 @@
     "stylus-loader": "^2.3.1",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.14",
-    "yargs": "^4.0.0"
+    "yargs": "^4.0.0",
+
+    "inuit-clearfix": "^0.2.1",
+    "inuit-defaults": "~0.2.1",
+    "inuit-functions": "~0.2.0",
+    "inuit-headings": "~0.3.0",
+    "inuit-images": "~0.3.3",
+    "inuit-list-bare": "~0.3.0",
+    "inuit-lists": "~0.1.0",
+    "inuit-mixins": "~0.2.3",
+    "inuit-normalize": "~4.1.1",
+    "inuit-page": "~0.2.1",
+    "inuit-reset": "~0.1.1",
+    "inuit-responsive-settings": "~0.1.2",
+    "inuit-responsive-tools": "~0.1.1",
+    "inuit-shared": "~0.1.5"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.0-beta.6",
@@ -149,6 +164,8 @@
     "eslint-plugin-promise": "^2.0.0",
     "eslint-plugin-react": "^6.0.0",
     "eslint-plugin-standard": "^2.0.0",
+    "intuit": "0.0.22",
+    "inuitcss": "^6.0.0-beta.3",
     "isparta-loader": "^2.0.0",
     "karma": "^1.0.0",
     "karma-coverage": "^1.0.0",
