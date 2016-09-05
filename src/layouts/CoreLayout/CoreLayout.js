@@ -18,15 +18,7 @@ export const CoreLayout = ({ children }) => (
   <div >
     <Header />
 
-      {children}
 
-      <Footer>
-
-
-
-
-
-      </Footer>
 
   </div>
 )

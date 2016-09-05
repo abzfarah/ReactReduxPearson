@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
-import  '../../styless/index.css'
+
 const CLASS_ROOT = CSSClassnames.PARAGRAPH;
 
 export default class Paragraph extends Component {

@@ -5,7 +5,7 @@ import Props from '../utils/Props';
 import SkipLinkAnchor from '../SkipLinkAnchor';
 import CSSClassnames from '../utils/CSSClassnames';
 import { announce } from '../utils/Announcer';
-import  '../../styless/index.css'
+
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 

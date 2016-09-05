@@ -9,7 +9,7 @@ import Columns from '../components/Columns';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import classnames from 'classnames';
-import  '../styless/index.css'
+
 
 
 export default class BlogFooter extends Component {

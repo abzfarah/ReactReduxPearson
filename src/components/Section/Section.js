@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from '../Box';
 import CSSClassnames from '../utils/CSSClassnames';
-import  '../../styless/index.css'
+
 const CLASS_ROOT = CSSClassnames.SECTION;
 
 export default class Section extends Component {
