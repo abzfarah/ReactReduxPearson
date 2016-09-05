@@ -10,3 +10,15 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+
+
+@import "base.page";
+@import "base.headings";
+@import "base.lists";
+@import "base.images";
+
+@import "base.font";
+@import "base.text";
+@import "base.animation";
+@import "base.input";
+@import "base.page";

@@ -29,10 +29,12 @@ const webpackConfig = {
   module: {}
 }
 // ------------------------------------
-// Entry Points
+// Entry Points ,paths.client('index.css')
 // ------------------------------------
 const APP_ENTRY_PATHS = [
   paths.client('main.js')
+
+
 ]
 
 webpackConfig.entry = {
@@ -61,10 +63,7 @@ webpackConfig.plugins = [
     hash: false,
     favicon: paths.client('static/favicon.ico'),
     filename: 'index.html',
-    inject: 'body',
-    minify: {
-      collapseWhitespace: true
-    }
+    inject: 'body'
   })
 ]
 
@@ -148,12 +147,12 @@ webpackConfig.module.loaders = [{
 // ------------------------------------
 // We use cssnano with the postcss loader, so we tell
 // css-loader not to duplicate minimization.
-const BASE_CSS_LOADER = 'css?sourceMap&-minimize'
+const BASE_CSS_LOADER = 'css?sourceMap'
 
 // Add any packge names here whose styles need to be treated as CSS modules.
 // These paths will be combined into a single regex.
 const PATHS_TO_TREAT_AS_CSS_MODULES = [
-  // 'react-toolbox', (example)
+  'styless',
 ]
 
 // If config has CSS modules enabled, treat this project's styles as CSS modules.

@@ -5,7 +5,7 @@ import Box from '../Box';
 import SkipLinkAnchor from '../SkipLinkAnchor';
 import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
-
+import  '../../styless/index.css'
 const CLASS_ROOT = CSSClassnames.FOOTER;
 
 export default class Footer extends Component {
