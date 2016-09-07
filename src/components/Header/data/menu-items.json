@@ -34,10 +34,22 @@
             "icon": "auth0"
           },
           {
+            "name": "Breached Passwords",
+            "id": "breached-passwords",
+            "href": "https://auth0.com/breached-passwords",
+            "icon": "auth0"
+          },
+          {
             "name": "Wordpress",
             "id": "wordpress",
             "href": "https://auth0.com/wordpress",
             "icon": "auth0"
+          },
+          {
+            "name": "Guardian",
+            "id": "guardian",
+            "href": "https://auth0.com/guardian",
+            "icon": "guardian"
           },
           {
             "name": "Webtask",
@@ -210,7 +222,13 @@
           "thumbnail": "https://auth0.com/lib/header/media/header-why-auth0.png",
           "title": "Why Auth0?",
           "excerpt": "Save time. Be Happy. Focus on what really matters. Authenticate and authorize apps and API's with any identity provider.",
-          "link": "https://auth0.com/why-auth0"
+          "morelinks": [
+            {
+              "text": "Learn more",
+              "href": "https://auth0.com/why-auth0",
+              "external": true
+            }
+          ]
         }
       }
     ]
@@ -292,14 +310,14 @@
         "id": "last-blog",
         "default": {
           "componentTitle": "Latest from <a href=\"https://auth0.com/blog\" rel=\"external\">Auth0 blog</a>",
-          "avatar": "https://avatars3.githubusercontent.com/u/604869?v=3&s=200",
-          "title": "Why You Should Follow Facebook And A/B Test Everything",
-          "excerpt": "How A/B Testing can help you taking decisions that make impact",
-          "link": "https://auth0.com/blog/why-you-should-ab-test-everything/",
+          "avatar": "https://en.gravatar.com/userimage/92476393/001c9ddc5ceb9829b6aaf24f5d28502a.png?size=200",
+          "title": "Stateless Sessions for Stateful Minds: JWTs Explained and How You Can Make The Switch",
+          "excerpt": "If you are interested in migrating to a stateless sessions approach, here's your guide!",
+          "link": "https://auth0.com/blog/stateless-auth-for-stateful-minds/",
           "external": true,
-          "author": "Diego Poza",
-          "thumbnail": "https://cdn.auth0.com/blog/ab-testing/logo.png",
-          "date": "August 19"
+          "author": "Sebastián Peyrott",
+          "thumbnail": "https://cdn.auth0.com/blog/jwtalgos/logo.png",
+          "date": "August 31"
         }
       }
     ]

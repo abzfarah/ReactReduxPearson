@@ -6,6 +6,10 @@ import styles from './WebHeader.styl';
 import classNames from 'classnames/bind';
 import cxN from 'classnames';
 
+import Props from '../../utils/Props';
+import CSSClassnames from '../../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.HEADERS;
 
 const cx = styles::classNames;
 
@@ -14,18 +18,10 @@ class WebHeader extends Component {
     className: PropTypes.string,
     children: PropTypes.node,
     menuItems: PropTypes.array,
-    theme: PropTypes.oneOf(['light', 'dark']),
+    theme: PropTypes.oneOf(['light', 'gray', 'dark']),
     featuredEnable: PropTypes.bool,
     featuredLink: PropTypes.string,
     featuredText: PropTypes.string,
-    primaryButtonEnable: PropTypes.bool,
-    primaryButtonLink: PropTypes.string,
-    primaryButtonOnClick: PropTypes.func,
-    primaryButtonText: PropTypes.string,
-    secondaryButtonEnable: PropTypes.bool,
-    secondaryButtonLink: PropTypes.string,
-    secondaryButtonOnClick: PropTypes.func,
-    secondaryButtonText: PropTypes.string,
     breakpoint: PropTypes.number
   };
 
@@ -36,15 +32,6 @@ class WebHeader extends Component {
     theme: 'light',
     featuredEnable: true,
     featuredLink: 'https://auth0.com/jobs',
-    featuredText: 'We\'re hiring!',
-    primaryButtonEnable: true,
-    primaryButtonLink: '',
-    primaryButtonOnClick: () => {},
-    primaryButtonText: 'Log in',
-    secondaryButtonEnable: true,
-    secondaryButtonLink: '?contact=true',
-    secondaryButtonOnClick: () => {},
-    secondaryButtonText: 'Talk to sales',
     breakpoint: 992
   };
 
@@ -70,44 +57,15 @@ class WebHeader extends Component {
   handleResize = () => {
     const mobileState = window.innerWidth < this.props.breakpoint;
     this.setState({ mobileState }, () => {
-      this.addOverflowBody();
+
       this.setHeightDropdown();
     });
   }
 
   navbarDropdownHandler = () => {
-    this.setState({ navbarDropdownIsOpen: !this.state.navbarDropdownIsOpen }, this.addOverflowBody);
+    this.setState({ navbarDropdownIsOpen: !this.state.navbarDropdownIsOpen });
   }
 
-  closeDropdownOnButtonClick = callback => event => {
-    const isMobile = this.state.mobileState;
-    const isDropdownOpen = this.state.navbarDropdownIsOpen;
-
-    if (callback) callback(event);
-    if (isMobile && isDropdownOpen) this.navbarDropdownHandler();
-  }
-
-  addOverflowBody() {
-    const { navbarDropdownIsOpen, mobileState } = this.state;
-
-    if (navbarDropdownIsOpen && mobileState) {
-      document.body.classList.add(cx('overflow'));
-    } else {
-      document.body.classList.remove(cx('overflow'));
-    }
-  }
-
-  handleKeyDown = e => {
-    // Only enable focusable elements on key tab pressed
-    if (e.keyCode !== 9 || this.state.focusable) return;
-    this.setState({ focusable: true });
-  }
-
-  renderButton(link, onClick, text, className) {
-    return !!link
-      ? <a href={link} className={className} onClick={onClick}>{text}</a>
-      : <button className={className} onClick={onClick}>{text}</button>;
-  }
 
   render() {
     const {
@@ -117,64 +75,32 @@ class WebHeader extends Component {
       theme,
       featuredEnable,
       featuredLink,
-      featuredText,
-      primaryButtonEnable,
-      primaryButtonLink,
-      primaryButtonOnClick,
-      primaryButtonText,
-      secondaryButtonEnable,
-      secondaryButtonLink,
-      secondaryButtonOnClick,
-      secondaryButtonText
+      featuredText
     } = this.props;
     const { navbarDropdownIsOpen, mobileState, focusable } = this.state;
 
-    const primaryButton = this.renderButton(
-      primaryButtonLink,
-      this.closeDropdownOnButtonClick(primaryButtonOnClick),
-      primaryButtonText,
-      'btn btn-success btn-sm'
-    );
-    const secondaryButton = this.renderButton(
-      secondaryButtonLink,
-      this.closeDropdownOnButtonClick(secondaryButtonOnClick),
-      secondaryButtonText,
-      'btn btn-transparent btn-sm'
-    );
+
     const renderedMenuItems = menuItems.map(item =>
       <Item
         key={item.position + item.id}
         item={item}
         theme={theme}
         simpleList={item.simpleList}
-        closeHeaderDropdown={this.closeDropdownOnButtonClick()}
         mobile={mobileState}
       />
     );
 
     return (
       <header
-        className={cx('header',  [`theme-${theme}`], className, {
+        className={cx('header', className, {
           'is-dropdown-open': navbarDropdownIsOpen,
           focusable
         })}
-        onKeyDown={this.handleKeyDown}
       >
-        <div className={cx('menu', { 'is-dropdown-open': navbarDropdownIsOpen })}>
           <div className="container">
-            <Head
-              toggleDropdownHandler={this.navbarDropdownHandler}
-              featured={featuredEnable}
-              featuredLink={featuredLink}
-              featuredText={featuredText}
-              dropdownOpen={navbarDropdownIsOpen}
-              theme={theme}
-              closeHeaderDropdown={this.closeDropdownOnButtonClick()}
-            />
-
-
+            <Head />
             <nav
-              className={cx('collapse', {
+              className={cx( {
                 'is-dropdown-open': navbarDropdownIsOpen
               })}
               ref="dropdownContent"
@@ -183,24 +109,8 @@ class WebHeader extends Component {
             </nav>
 
 
-
-            <div
-              className={cxN(cx('buttons-group', {
-                'is-dropdown-open': navbarDropdownIsOpen
-              }), {
-                'theme-dark': theme === 'dark'
-              })}
-            >
-              {secondaryButtonEnable ? secondaryButton : null}
-              {primaryButtonEnable ? primaryButton : null}
-            </div>
-
-            
-
-
-
           </div>
-        </div>
+
       </header>
     );
   }

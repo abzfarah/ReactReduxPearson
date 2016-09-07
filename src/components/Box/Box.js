@@ -56,12 +56,15 @@ export default class Box extends Component {
   }
 
   render () {
+
     const { a11yTitle, appCentered, backgroundImage, children, className,
       colorIndex, containerClassName, flex, focusable, id, onClick, primary,
       role, size, tag, tabIndex, texture } = this.props;
+
     let classes = [CLASS_ROOT];
     let containerClasses = [CLASS_ROOT + "__container"];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
+
     this._addPropertyClass(classes, CLASS_ROOT, 'full');
     this._addPropertyClass(classes, CLASS_ROOT, 'direction');
     this._addPropertyClass(classes, CLASS_ROOT, 'justify');
@@ -75,6 +78,8 @@ export default class Box extends Component {
     this._addPropertyClass(classes, CLASS_ROOT, 'size');
     this._addPropertyClass(classes, CLASS_ROOT, 'textAlign', 'text-align');
     this._addPropertyClass(classes, CLASS_ROOT, 'wrap');
+
+
 
     if (this.props.hasOwnProperty('flex')) {
       if (flex) {
@@ -157,10 +162,12 @@ export default class Box extends Component {
           className={containerClasses.join(' ')}
           style={style} role={role} {...a11yProps}>
           {skipLinkAnchor}
+
           <Component id={id} className={classes.join(' ')}>
             {textureMarkup}
             {children}
           </Component>
+
         </div>
       );
     } else {
@@ -169,9 +176,11 @@ export default class Box extends Component {
           id={id} className={classes.join(' ')} style={style}
           role={role} tabIndex={tabIndex}
           onClick={onClick} {...a11yProps}>
+
           {skipLinkAnchor}
           {textureMarkup}
           {children}
+
         </Component>
       );
     }
@@ -219,6 +228,8 @@ Box.propTypes = {
   ]),
   wrap: PropTypes.bool
 };
+
+
 
 Box.contextTypes = {
   intl: PropTypes.object

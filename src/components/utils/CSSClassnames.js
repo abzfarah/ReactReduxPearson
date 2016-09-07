@@ -42,6 +42,7 @@ export default {
   FORM_FIELD: `${namespace}form-field`,
   FORM_FIELDS: `${namespace}form-fields`,
   HEADER: `${namespace}header`,
+  HEADERS: `${namespace}headers`,
   HEADING: `${namespace}heading`,
   HEADLINE: `${namespace}headline`,
   HERO: `${namespace}hero`,

@@ -44,7 +44,7 @@ class Item extends Component {
 
     return (
       <li
-        className={cx('item', [`item-${item.id}`], [`theme-${theme}`], {
+        className={cx('item', [`item-${item.id}`], {
           'simple-list': simpleList,
           'is-dropdown-open': this.state.openDropdown
         })}
@@ -53,20 +53,11 @@ class Item extends Component {
         onMouseLeave={this.handleDropdown}
         onBlur={this.handleDropdown}
       >
-        {linkHref
-          ?
-            <a
-              href={linkHref}
-              onClick={this.closeDropdowns}
-              className={cx('link')}
-              rel={linkExternal}
-            >{linkContent}</a>
-          :
-            <span
-              tabIndex="0"
-              className={cx('link')}
-            >{linkContent}</span>
-        }
+
+      <span tabIndex="0" className={cx('link')}> {linkContent}</span>
+              
+
+
         {item.childrens
           ?
             <Dropdown
@@ -97,8 +88,8 @@ const ItemContent = ({ name, childrens, theme }) =>
     <span className={cx('text')}>{name}</span>
     {childrens ?
       <svg
-        width="10"
-        height="6"
+        width="8"
+        height="4"
         viewBox="62 7 10 6"
         className={cx('item-caret')}
       >

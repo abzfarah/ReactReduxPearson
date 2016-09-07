@@ -31,22 +31,8 @@ const DropdownHighlight = ({ data, parentClass, closeDropdowns }) =>
         ? <p className={cx('text')}>{data.excerpt}</p>
         : null
       }
-      {data.date
-        ? <span className={cx('time')}>{data.date}</span>
-        : null
-      }
     </a>
-    <div className={cx('content')}>
-      {(data.morelinks || []).map(({ href, text, external }, index) =>
-        <a
-          href={href}
-          className={cx('link')}
-          onClick={closeDropdowns}
-          key={index}
-          rel={external ? 'external' : null}
-        >{text}</a>
-      )}
-    </div>
+
   </div>
 ;
 
