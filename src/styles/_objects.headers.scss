@@ -1,9 +1,12 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+ $grommet-namespace: 'grommetux-';
+
 .#{$grommet-namespace}header {
   min-height: $header-height;
-  width: 100%;
-  margin-bottom: 0px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  text-align: left:
 
   // Height is needed to coerce IE11 into aligning center even though
   // this is ignored by min-height. (Also needed on header--large and
