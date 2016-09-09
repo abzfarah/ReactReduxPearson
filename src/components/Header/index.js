@@ -1,1 +1,3 @@
-export default from './WebHeader';
+import Header from './Header'
+
+export default Header

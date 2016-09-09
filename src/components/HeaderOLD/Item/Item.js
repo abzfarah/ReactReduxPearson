@@ -55,7 +55,7 @@ class Item extends Component {
       >
 
       <span tabIndex="0" className={cx('link')}> {linkContent}</span>
-              
+
 
 
         {item.childrens
@@ -85,13 +85,13 @@ export default Item;
 
 const ItemContent = ({ name, childrens, theme }) =>
   <span>
-    <span className={cx('text')}>{name}</span>
+    <span>{name}</span>
     {childrens ?
       <svg
         width="8"
         height="4"
         viewBox="62 7 10 6"
-        className={cx('item-caret')}
+
       >
         <path
           // eslint-disable-next-line max-len
@@ -101,7 +101,7 @@ const ItemContent = ({ name, childrens, theme }) =>
       </svg>
       : null
     }
-    {childrens ? <span className={cx('dropdown-caret')}></span> : null}
+    {childrens ? <span></span> : null}
   </span>;
 
 ItemContent.propTypes = {

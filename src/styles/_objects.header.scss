@@ -5,13 +5,7 @@
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   text-align: left;
-  // Height is needed to coerce IE11 into aligning center even though
-  // this is ignored by min-height. (Also needed on header--large and
-  // header--small.) We need to subtract 1 unit in order to allow
-  // min-height to keep the header height dynamic.
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $header-height - 1;
-  }
+
 
   a:not(.#{$grommet-namespace}button) {
     color: inherit;
@@ -28,12 +22,91 @@
   }
 }
 
+
+
+.#{$grommet-namespace}header__wrapper {
+  height: $header-height;
+
+}
+
+.#{$grommet-namespace}header > div {
+  margin-right: auto;
+  margin-left: auto;
+
+}
+]
+.#{$grommet-namespace}header > h1 {
+  margin-top: 37px;
+  margin-bottom: 37px;
+  position: relative;
+  margin-left: 15px;
+  margin: 0;
+  width: 100px;
+  height: 36px;
+
+}
+
+.#{$grommet-namespace}header  h1 > a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgi…gICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+");
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0;
+  color: rgba(0,0,0,0);
+
+}
+
+.#{$grommet-namespace}header__wrapper nav {
+
+
+}
+
+.#{$grommet-namespace}header__wrapper nav > ul {
+    display: flex;
+    list-style: none;
+    margin-top: 41px;
+    margin-bottom: 41px;
+    background-color: red;
+    border: 2px solid black;
+
+}
+
+
+
+
+.#{$grommet-namespace}header__wrapper nav  ul > li{
+    flex: 1;
+
+
+}
+
+.#{$grommet-namespace}header__wrapper nav  ul  h1 >a{
+    flex: 1;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .#{$grommet-namespace}header--large {
   min-height: $large-header-height;
-
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $large-header-height - 1;
-  }
 
   .#{$grommet-namespace}header__content {
     line-height: $large-header-height;
@@ -42,10 +115,6 @@
 
 .#{$grommet-namespace}header--small {
   min-height: $small-header-height;
-
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $small-header-height - 1;
-  }
 
   .#{$grommet-namespace}header__content {
     line-height: $small-header-height;
@@ -102,7 +171,8 @@ header.#{$grommet-namespace}header--primary {
 
 // header with container and wrapper elements
 .#{$grommet-namespace}header__container {
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .#{$grommet-namespace}header__container--fill {
@@ -136,9 +206,7 @@ header.#{$grommet-namespace}header--primary {
   right: 0px;
 }
 
-.#{$grommet-namespace}header__wrapper {
-  height: $header-height;
-}
+
 
 .#{$grommet-namespace}header__wrapper--large {
   height: $large-header-height;

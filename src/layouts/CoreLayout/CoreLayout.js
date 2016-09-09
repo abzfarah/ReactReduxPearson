@@ -1,6 +1,6 @@
 import React from 'react'
 import Anchor from '../../components/Anchor'
-import Heda from '../../components/Heda'
+import Header from '../../components/Header'
 import Footer from '../../containers/Footer'
 import Box from '../../components/Box'
 import Button from '../../components/Button'
@@ -17,9 +17,32 @@ const CLASS_ROOT = CSSClassnames.CALENDAR;
 
 export const CoreLayout = ({ children }) => (
   <div >
-  <Heda fixed={true}>
+  <Header fixed={true}>
 
-</Heda>
+  <Box size="large">
+
+      <Box>
+
+      </Box>
+
+      <nav>
+
+        <ul>
+        <h1>
+          <a></a>
+        </h1>
+          <li> Products</li>
+          <li> Why Auth0</li>
+          <li> Pricing</li>
+          <li> Documentation</li>
+        </ul>
+
+      </nav>
+
+
+  </Box>
+
+</Header>
 
   </div>
 )
