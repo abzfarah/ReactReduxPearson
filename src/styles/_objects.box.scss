@@ -259,7 +259,9 @@
 .#{$grommet-namespace}box--justify-start {
   justify-content: flex-start;
 }
-
+.#{$grommet-namespace}box--justify-around {
+  justify-content: space-around;
+}
 .#{$grommet-namespace}box--justify-center {
   justify-content: center;
   flex-shrink: 0;

@@ -192,7 +192,7 @@ Box.propTypes = {
   a11yTitle: PropTypes.string,
   announce: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
-  alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between',
+  alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between','around',
     'around', 'stretch']),
   appCentered: PropTypes.bool,
   backgroundImage: PropTypes.string,
@@ -204,7 +204,7 @@ Box.propTypes = {
   flex: PropTypes.bool,
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   onClick: PropTypes.func,
-  justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  justify: PropTypes.oneOf(['start', 'center', 'between','around', 'end']),
   pad: PropTypes.oneOfType([
     PropTypes.oneOf(['none', 'small', 'medium', 'large']),
     PropTypes.shape({

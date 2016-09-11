@@ -17,32 +17,36 @@ const CLASS_ROOT = CSSClassnames.CALENDAR;
 
 export const CoreLayout = ({ children }) => (
   <div >
-  <Header fixed={true}>
+  <Header fixed={true} direction="row">
 
-  <Box size="large">
+    <Box  tag="div" direction="row" justify="around">
+         <h1 id="menuLogo" className="vcaa-logo"> 
+            <a href="http://imgur.com/OlNC7UY"><img  id="menuLogo"  src="http://i.imgur.com/OlNC7UY.png" title="source: imgur.com" /></a>
+         </h1>
 
-      <Box>
+        <Box direction="row">
+            <Button label="Help" secondary={true} />
+            <Button label="Log Out" primary={true} />
+        </Box>    
 
-      </Box>
+     </Box>
 
-      <nav>
+    <Box  tag="div" direction="row"  justify="around" >
+         <Box >
+            <div className="head-name">St. Paul's Anglican Grammar School</div>
+             <div className="head-code">School Code: 01678</div>
+         </Box>
 
-        <ul>
-        <h1>
-          <a></a>
-        </h1>
-          <li> Products</li>
-          <li> Why Auth0</li>
-          <li> Pricing</li>
-          <li> Documentation</li>
-        </ul>
+        <Box direction="row">
+            <button> Pas School </button>
+            <button> School cODE </button>
+        </Box>
 
-      </nav>
+     </Box>
 
 
-  </Box>
 
-</Header>
+  </Header>
 
   </div>
 )
